@@ -6,16 +6,19 @@
 <style>html{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 /* ---------- teaser: Coming Soon in place of the customise button, and once more at the end ---------- */
 .lx-soon{display:flex;flex-direction:column;align-items:center;gap:calc(14*var(--k));width:calc(720*var(--k));padding:calc(30*var(--k)) 0 calc(34*var(--k));
-  border-top:1px solid rgba(247,243,239,.45);border-bottom:1px solid rgba(247,243,239,.45);text-shadow:0 1px 14px rgba(40,12,12,.35)}
+  text-shadow:0 1px 16px rgba(40,12,12,.45)}
 .lx-soon-en{margin:0;font:400 calc(66*var(--k))/1 "Faculty Glyphic",var(--optima),serif;letter-spacing:.1em;color:#fff}
 .lx-soon-zh{margin:0;font-size:var(--t-lead);letter-spacing:.1em;color:#fff;white-space:nowrap}
-.lx-hero .lx-soon{margin-bottom:6px;background:rgba(45,16,17,.42);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid rgba(247,243,239,.4)}
+.lx-hero .lx-soon{margin-bottom:6px}
+/* no box: the photo melts into the dark red earlier, so Coming Soon sits on the fade */
+.lx-hero-img{-webkit-mask-image:linear-gradient(to bottom,#000 40%,rgba(0,0,0,.6) 60%,rgba(0,0,0,.18) 80%,transparent 96%);mask-image:linear-gradient(to bottom,#000 40%,rgba(0,0,0,.6) 60%,rgba(0,0,0,.18) 80%,transparent 96%)}
 .lx-end{padding:calc(40*var(--k)) 0 calc(190*var(--k));display:flex;flex-direction:column;align-items:center}
 .lx-end .lx-end-mini{margin:0 0 calc(80*var(--k))}
-.lx-soon-end{border-color:rgba(243,234,223,.3);text-shadow:none}
+.lx-soon-end{text-shadow:none}
 .lx-soon-end .lx-soon-zh{color:var(--on-dark)}
 .lx-notice{padding-bottom:calc(110*var(--k))}
 @media (min-width:1280px){
+  .lx-hero-img{-webkit-mask-image:none;mask-image:none}
   .lx-soon{grid-column:1 / -1;justify-self:center;width:calc(536*var(--u));gap:calc(12*var(--u));padding:calc(24*var(--u)) 0 calc(26*var(--u))}
   .lx-soon-en{font-size:calc(52*var(--u))}
   .lx-cta .lx-sub-btn{grid-column:1 / -1;justify-self:center;margin-top:calc(14*var(--u))}
