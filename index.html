@@ -243,19 +243,18 @@ p,h1,h2,h3,ul{margin:0}
 .lx-vid video{background:transparent}
 .lx-glove{width:calc(300*var(--k));left:calc(600*var(--k));top:calc(690*var(--k));z-index:3}
 .lx-card{position:relative;z-index:2;width:calc(757*var(--k));margin:calc(-107*var(--k)) 0 0 calc(51*var(--k));
-  padding:calc(66*var(--k)) calc(125*var(--k)) calc(70*var(--k)) calc(58*var(--k));background:#ece7e1;box-shadow:0 10px 30px rgba(20,6,6,.28)}
+  padding:calc(66*var(--k)) calc(125*var(--k)) calc(70*var(--k)) calc(58*var(--k));background:#ece7e1}
 .lx-card .lx-h2{color:#4d1f21;font-weight:400;white-space:nowrap}
 .lx-card .lx-body{color:#3d2b28;letter-spacing:.04em}
 .lx-card .lx-h2+.lx-body{margin-top:calc(40*var(--k))}
 .lx-card .lx-body br{display:none}   /* narrow card: let the lines flow instead of breaking mid-sentence */
-.lx-kid{position:absolute;z-index:3;left:calc(654*var(--k));top:calc(88*var(--k));width:calc(213*var(--k));height:auto;
-  filter:drop-shadow(0 8px 14px rgba(20,6,6,.25))}
+.lx-kid{position:absolute;z-index:3;left:calc(654*var(--k));top:calc(88*var(--k));width:calc(213*var(--k));height:auto;}
 .lx-snaps{position:relative;display:flex;align-items:flex-start}
 .lx-snap{position:relative;overflow:hidden;background:#3a1718}
 .lx-snap img{width:100%;height:100%;object-fit:cover}
-.lx-left{width:calc(441*var(--k));aspect-ratio:300/380;margin-top:calc(-56*var(--k));z-index:5;box-shadow:0 10px 26px rgba(20,6,6,.3)}   /* on top of everything */
+.lx-left{width:calc(441*var(--k));aspect-ratio:300/380;margin-top:calc(-56*var(--k));z-index:5}   /* on top of everything */
 .lx-owner{width:calc(482*var(--k));margin-top:calc(-130*var(--k));z-index:4;background:none;overflow:visible}   /* cut-out: over the card, under the left photo */
-.lx-owner img{height:auto;object-fit:initial;filter:drop-shadow(0 10px 16px rgba(20,6,6,.28))}
+.lx-owner img{height:auto;object-fit:initial}
 
 /* 4 · nine colours × nine scents: two photos swapping like a GIF; the title under them */
 .lx-swap{width:100%;aspect-ratio:1/1}
@@ -305,6 +304,11 @@ p,h1,h2,h3,ul{margin:0}
 .rv-on .lx-h2[data-rv].in,.rv-on .lx-nt[data-rv].in,.rv-on .step-h[data-rv].in,.rv-on .lx-h1 span[data-rv].in{clip-path:inset(-20% -5% -20% -5%);transform:none}
 /* out of view: reset at once, so the next entrance plays again */
 .rv-on [data-rv].out,.rv-on .lx-mini.out path{transition:none!important}
+/* collage pictures: laid down one after another — a short slide in, a slight turn that straightens out */
+.rv-on .lx-kid[data-rv]{transform:translate3d(22px,-14px,0) rotate(5deg);transition-delay:250ms;transition-duration:.9s,1.3s}
+.rv-on .lx-left[data-rv]{transform:translate3d(-26px,22px,0) rotate(-5deg);transition-delay:100ms;transition-duration:.9s,1.3s}
+.rv-on .lx-owner[data-rv]{transform:translate3d(30px,18px,0) rotate(3deg);transition-delay:400ms;transition-duration:.9s,1.3s}
+.rv-on .lx-kid[data-rv].in,.rv-on .lx-left[data-rv].in,.rv-on .lx-owner[data-rv].in{transform:none}
 /* the little tree builds itself, bottom layer first, the star last */
 .rv-on .lx-mini[data-rv]{transform:none}
 .rv-on .lx-mini path{opacity:0;transform:translateY(-34px);transform-box:fill-box;transform-origin:50% 100%;
@@ -754,11 +758,11 @@ body{font-weight:400}
       <p data-rv style="--d:100ms" class="lx-body">小時候，我們總喜歡把不同形狀、顏色的積木堆疊起來，<br>不管它們奇不奇怪，都能拼湊出自己想像中的<span class="nw">小宇宙 🪐</span></p>
       <p data-rv style="--d:200ms" class="lx-body">今年聖誕節，<br>我們把這份童心變成了一棵可以自由堆疊的香氛聖誕樹。</p>
       <p data-rv style="--d:300ms" class="lx-body">想邀請你找回童心，<br>用喜歡的顏色、形狀與香氣，創造一棵獨一無二的<span class="nw">聖誕樹 ✨</span></p>
-      <img class="lx-kid" src="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-02.png?tr=w-560,f-auto" srcset="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-02.png?tr=w-280,f-auto 280w, https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-02.png?tr=w-560,f-auto 560w" sizes="(min-width:1280px) 200px, 34vw" alt="抱著積木的小朋友" loading="lazy" decoding="async">
+      <img data-rv class="lx-kid" src="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-02.png?tr=w-560,f-auto" srcset="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-02.png?tr=w-280,f-auto 280w, https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-02.png?tr=w-560,f-auto 560w" sizes="(min-width:1280px) 200px, 34vw" alt="抱著積木的小朋友" loading="lazy" decoding="async">
     </div>
     <div class="lx-snaps">
-      <div class="lx-snap lx-left"><img src="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-01.png?tr=w-900,f-auto" srcset="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-01.png?tr=w-450,f-auto 450w, https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-01.png?tr=w-900,f-auto 900w" sizes="(min-width:1280px) 420px, 48vw" alt="小朋友開心地玩疊疊樂" loading="lazy" decoding="async"></div>
-      <div class="lx-snap lx-owner"><img src="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-03.png?tr=w-1000,f-auto" srcset="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-03.png?tr=w-500,f-auto 500w, https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-03.png?tr=w-1000,f-auto 1000w" sizes="(min-width:1280px) 460px, 52vw" alt="親手疊起聖誕樹香氛蠟燭" loading="lazy" decoding="async"></div>
+      <div data-rv class="lx-snap lx-left"><img src="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-01.png?tr=w-900,f-auto" srcset="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-01.png?tr=w-450,f-auto 450w, https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-01.png?tr=w-900,f-auto 900w" sizes="(min-width:1280px) 420px, 48vw" alt="小朋友開心地玩疊疊樂" loading="lazy" decoding="async"></div>
+      <div data-rv class="lx-snap lx-owner"><img src="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-03.png?tr=w-1000,f-auto" srcset="https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-03.png?tr=w-500,f-auto 500w, https://ik.imagekit.io/itssaturday/banner/20261113-christmas/web-01-03.png?tr=w-1000,f-auto 1000w" sizes="(min-width:1280px) 460px, 52vw" alt="親手疊起聖誕樹香氛蠟燭" loading="lazy" decoding="async"></div>
     </div>
   </section>
 
